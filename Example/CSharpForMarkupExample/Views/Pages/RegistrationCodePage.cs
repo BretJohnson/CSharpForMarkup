@@ -7,7 +7,9 @@ namespace CSharpForMarkupExample.Views.Pages
 {
     public class RegistrationCodePage : BaseContentPage<RegistrationCodeViewModel>
     {
-        public RegistrationCodePage()
+        public RegistrationCodePage() { Content = BuildContent(); }
+
+        public View BuildContent()
         {
             var app = App.Current;
 
@@ -19,7 +21,7 @@ namespace CSharpForMarkupExample.Views.Pages
 
             BackgroundColor = Colors.BgGray3.ToColor();
 
-            Content = new Grid 
+            return new Grid 
             {
                 RowSpacing = 0,
                 RowDefinitions = { new RowDefinition { Height = GridLength.Auto }, new RowDefinition { } },

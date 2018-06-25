@@ -8,7 +8,9 @@ namespace CSharpForMarkupExample.Views.Pages
 {
     public class NestedListPage : BaseContentPage<NestedListViewModel>
     {
-        public NestedListPage()
+        public NestedListPage() { Content = BuildContent(); }
+
+        public View BuildContent()
         {
             var app = App.Current;
 
@@ -18,7 +20,7 @@ namespace CSharpForMarkupExample.Views.Pages
 
             BackgroundColor = Colors.BgGray3.ToColor();
 
-            Content = new Grid
+            return new Grid
             {
                 RowSpacing = 0,
                 RowDefinitions = {

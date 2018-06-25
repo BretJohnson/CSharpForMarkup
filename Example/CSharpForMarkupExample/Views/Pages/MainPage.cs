@@ -8,7 +8,9 @@ namespace CSharpForMarkupExample.Views.Pages
 {
     public class MainPage : BaseContentPage<MainViewModel>
     {
-        public MainPage()
+        public MainPage() { Content = BuildContent(); }
+
+        public View BuildContent()
         {
             var app = App.Current;
             var vm = ViewModel = app.MainViewModel;
@@ -17,7 +19,7 @@ namespace CSharpForMarkupExample.Views.Pages
 
             BackgroundColor = Colors.BgGray3.ToColor();
 
-            Content = new Grid 
+            return new Grid 
             {
                 RowSpacing = 0,
                 RowDefinitions = { new RowDefinition { Height = GridLength.Auto }, new RowDefinition { } },
